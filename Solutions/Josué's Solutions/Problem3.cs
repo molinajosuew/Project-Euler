@@ -1,3 +1,8 @@
+// Project Euler
+// Problem 3
+
+// This file uses Prime.cs.
+
 using System;
 
 class Problem3

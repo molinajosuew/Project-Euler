@@ -22,4 +22,8 @@ static class Prime
         }
         return true;
     }
+    public static void nextPrime(ref int n)
+    {
+        while (!isPrime(++n)) { }
+    }
 }

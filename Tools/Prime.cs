@@ -1,4 +1,7 @@
-﻿static class Prime
+﻿// Utility Class
+// This class facilitates working with prime numbers.
+
+static class Prime
 {
     public static bool isPrime(int n)
     {

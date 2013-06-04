@@ -3,6 +3,49 @@
 
 static class Prime
 {
+    static int[] Sieve(int limit)
+    {
+        bool?[] hash = new bool?[limit + 1];
+
+        // Find prime numbers.
+        hash[0] = false;
+        hash[1] = false;
+        for (int i = 0; i < limit + 1; i++)
+        {
+            if (hash[i] == null)
+            {
+                hash[i] = true;
+                for (int j = i * 2; j < limit + 1; j += i)
+                {
+                    hash[j] = false;
+                }
+            }
+        }
+
+        // Count prime numbers.
+        int counter = 0;
+        for (int i = 0; i < limit + 1; i++)
+        {
+            if (hash[i].Value)
+            {
+                counter++;
+            }
+        }
+
+        // Store prime numbers.
+        int[] primes = new int[counter];
+        counter = 0;
+        for (int i = 0; i < limit + 1; i++)
+        {
+            if (hash[i].Value)
+            {
+                primes[counter] = i;
+                counter++;
+            }
+        }
+
+        return primes;
+    }
     public static bool isPrime(int n)
     {
         if (n == 2)

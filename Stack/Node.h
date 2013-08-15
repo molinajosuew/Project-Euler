@@ -3,10 +3,10 @@
 
 struct Node
 {
-	int Value;
-	Node* Link;
+    int Value;
+    Node* Link;
 
-	Node(int, Node* = nullptr);
+    Node(int, Node* = nullptr);
 };
 
 #endif

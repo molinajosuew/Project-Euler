@@ -2,6 +2,6 @@
 
 Node::Node(int value, Node* link)
 {
-	Value = value;
-	Link = link;
+    Value = value;
+    Link = link;
 }

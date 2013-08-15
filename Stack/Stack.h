@@ -6,14 +6,14 @@
 class Stack
 {
 private:
-	Node* Head;
+    Node* Head;
 
 public:
-	Stack();
-	void Push(int);
-	void Pop();
-	int Top();
-	bool IsEmpty();
+    Stack();
+    void Push(int);
+    void Pop();
+    int Top();
+    bool IsEmpty();
 };
 
 #endif

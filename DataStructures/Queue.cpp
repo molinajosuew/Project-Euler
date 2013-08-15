@@ -10,14 +10,14 @@ void Queue::Enqueue(int value)
 {
     if (Head == nullptr)
     {
-        Head = new Node(value, nullptr, nullptr);
+        Head = new Node(value, nullptr);
         Tail = Head;
     }
     else
     {
         Node* temporary = Tail;
-        Tail = new Node(value, temporary, nullptr);
-        temporary->Next = Tail;
+        Tail = new Node(value, temporary);
+        temporary->Link = Tail;
     }
 }
 
@@ -28,7 +28,7 @@ void Queue::Dequeue()
         return;
     }
 
-    Node* temporary = Head->Next;
+    Node* temporary = Head->Link;
     delete Head;
     Head = temporary;
 }

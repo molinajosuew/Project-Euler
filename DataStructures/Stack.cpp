@@ -14,7 +14,7 @@ void Stack::Push(int value)
     else
     {
         Node* temporary = Head;
-        Head = new Node(value, nullptr, temporary);
+        Head = new Node(value, temporary);
     }
 }
 
@@ -26,7 +26,7 @@ void Stack::Pop()
     }
 
     Node* temporary = Head;
-    Head = Head->Next;
+    Head = Head->Link;
     delete temporary;
 }
 

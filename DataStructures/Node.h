@@ -4,10 +4,9 @@
 struct Node
 {
     int Value;
-    Node* Previous;
-    Node* Next;
+    Node* Link;
 
-    Node(int, Node* = nullptr, Node* = nullptr);
+    Node(int, Node* = nullptr);
 };
 
 #endif

@@ -38,7 +38,6 @@ int Queue::Peek()
     return Head->Value;
 }
 
-
 bool Queue::IsEmpty()
 {
     return Head == nullptr;

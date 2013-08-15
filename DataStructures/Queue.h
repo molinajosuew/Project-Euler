@@ -6,15 +6,15 @@
 class Queue
 {
 private:
-	Node* Head;
-	Node* Tail;
+    Node* Head;
+    Node* Tail;
 
 public:
-	Queue();
-	void Enqueue(int);
-	void Dequeue();
-	int Peek();
-	bool IsEmpty();
+    Queue();
+    void Enqueue(int);
+    void Dequeue();
+    int Peek();
+    bool IsEmpty();
 };
 
 #endif

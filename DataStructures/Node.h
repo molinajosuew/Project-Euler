@@ -4,7 +4,7 @@
 struct Node
 {
     int Value;
-	Node* Previous;
+    Node* Previous;
     Node* Next;
 
     Node(int, Node* = nullptr, Node* = nullptr);

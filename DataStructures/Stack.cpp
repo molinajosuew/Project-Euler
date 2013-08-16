@@ -5,6 +5,14 @@ Stack::Stack()
     Head = nullptr;
 }
 
+Stack::~Stack()
+{
+    while (!IsEmpty())
+    {
+        Pop();
+    }
+}
+
 void Stack::Push(int value)
 {
     if (Head == nullptr)

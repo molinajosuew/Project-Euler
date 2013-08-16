@@ -6,6 +6,14 @@ Queue::Queue()
     Tail = Head;
 }
 
+Queue::~Queue()
+{
+    while (!IsEmpty())
+    {
+        Dequeue();
+    }
+}
+
 void Queue::Enqueue(int value)
 {
     if (Head == nullptr)

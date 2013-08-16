@@ -10,6 +10,7 @@ private:
 
 public:
     Stack();
+    ~Stack();
     void Push(int);
     void Pop();
     int Top();

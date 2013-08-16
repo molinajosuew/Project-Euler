@@ -11,6 +11,7 @@ private:
 
 public:
     Queue();
+    ~Queue();
     void Enqueue(int);
     void Dequeue();
     int Peek();

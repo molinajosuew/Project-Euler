@@ -26,18 +26,14 @@ class Program
                                "71636269561882670428252483600823257530420752963450" };
         string number = string.Join(null, rawNumber);
         int max = 0;
-
         for (int i = 0; i <= number.Length - 5; i++)
         {
-            int product = 1;
-            
+            int product = 1;            
             for (int j = i; j < i + 5; j++)
                 product *= number[j] - 48; // (int)'0' == 48
-
             if (product > max)
                 max = product;
         }
-
         Console.WriteLine(max);
     }
 }

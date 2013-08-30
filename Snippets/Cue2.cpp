@@ -1,27 +1,38 @@
-// http://challenge.cueup.com/
-// Level 2 Solution
-
 #include <iostream>
 
-bool is_prime(int n)
+bool is_prime(int num)
 {
-    if (n < 2)
+    if (num < 2)
+    {
         return false;
-    if (n == 2)
+    }
+
+    if (num == 2)
+    {
         return true;
-    if (n % 2 == 0)
+    }
+
+    if (num % 2 == 0)
+    {
         return false;
-    for (int i = 3; i * i <= n; i += 2)
-        if (n % i == 0)
+    }
+
+    for (int i = 3; i * i <= num; i += 2)
+    {
+        if (num % i == 0)
+        {
             return false;
+        }
+    }
+
     return true;
 }
 
-int first_fibonacci_prime(int n)
+int first_fibonacci_prime(int num)
 {
     int i = 1, j = 1;
 
-    while (j <= n || !is_prime(j))
+    while (j <= num || !is_prime(j))
     {
         int t = j;
         j += i;
@@ -31,17 +42,21 @@ int first_fibonacci_prime(int n)
     return j;
 }
 
-int sum_of_prime_divisors(int n)
+int sum_of_prime_divisors(int num)
 {
     int sum = 0;
 
-    for (int i = 2; i <= n; i++)
-        if (is_prime(i) && n % i == 0)
+    for (int i = 2; i <= num; i++)
+    {
+        if (is_prime(i) && num % i == 0)
         {
             sum += i;
-            while (n % i == 0)
-                n /= i;
+            while (num % i == 0)
+            {
+                num /= i;
+            }
         }
+    }
 
     return sum;
 }

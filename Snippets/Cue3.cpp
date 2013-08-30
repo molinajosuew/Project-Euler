@@ -4,21 +4,23 @@
 
 int cnt = 0;
 
-void my_function(std::vector<int>& vec, int ind, int sum, int max)
+void my_function(std::vector<int>& vec, int ind, int sum)
 {
+    static int max = *std::max_element(vec.begin(), vec.end());
+
     if (sum > max)
     {
         return;
     }
 
-    if (*std::find(vec.begin(), vec.end(), sum) == sum)
+    if (std::binary_search(vec.begin(), vec.end(), sum))
     {
         cnt++;
     }
 
     for (int i = ind; sum + vec[i] <= max; i++)
     {
-        my_function(vec, i + 1, sum + vec[i], max);
+        my_function(vec, i + 1, sum + vec[i]);
     }
 }
 
@@ -29,7 +31,7 @@ main()
     
     std::vector<int> vec (num, num + siz);
 
-    my_function(vec, 0, 0, *std::max_element(vec.begin(), vec.end()));
+    my_function(vec, 0, 0);
 
     std::cout << cnt - siz;
 }

@@ -6,7 +6,7 @@ int binary_search(int arr[], int siz, int num)
 {
     int beg = 0, end = siz - 1, mid = (beg + end) / 2;
 
-    while (beg + 1 != end)
+    while (beg + 1 != end && beg != end)
     {
         if (arr[mid] == num)
             return mid;

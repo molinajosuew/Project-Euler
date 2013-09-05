@@ -1,5 +1,16 @@
 #include <iostream>
 
+bool is_prime(int);
+int first_greatest_fibonacci_prime(int);
+int sum_of_prime_divisors(int);
+
+int main()
+{
+    std::cout << sum_of_prime_divisors(first_greatest_fibonacci_prime(227000) + 1);
+
+    return 0;
+}
+
 bool is_prime(int num)
 {
     if (num < 2)
@@ -28,7 +39,7 @@ bool is_prime(int num)
     return true;
 }
 
-int first_fibonacci_prime(int num)
+int first_greatest_fibonacci_prime(int num)
 {
     int i = 1, j = 1;
 
@@ -59,11 +70,4 @@ int sum_of_prime_divisors(int num)
     }
 
     return sum;
-}
-
-int main()
-{
-    std::cout << sum_of_prime_divisors(first_fibonacci_prime(227000) + 1);
-
-    return 0;
 }

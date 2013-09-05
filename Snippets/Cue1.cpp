@@ -1,33 +1,41 @@
 #include <iostream>
 
-bool IsPalindrome(std::string s)
-{
-    for (int i = 0; i < s.length() / 2; i++)
-    {
-        if (s[i] != s[s.length() - i - 1])
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
+bool is_palindrome(std::string);
 
 int main()
 {
-    std::string s = "FourscoreandsevenyearsagoourfaathersbroughtforthonthiscontainentanewnationconceivedinzLibertyanddedicatedtothepropositionthatallmenarecreatedequalNowweareengagedinagreahtcivilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth";
+    std::string str = "FourscoreandsevenyearsagoourfaathersbroughtforthonthiscontainentanewnationconceivedinzLibertyanddedicatedtothepropositionthatallmenarecreatedequalNowweareengagedinagre" +
+                      "ahtcivilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldas" +
+                      "afinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratew" +
+                      "ecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesa" +
+                      "yherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobe" +
+                      "herededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyre" +
+                      "solvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth";
 
-    for (int i = s.length(); i >= 2; i--)
+    for (int i = str.length(); i >= 2; i--)
     {
-        for (int j = 0; j <= s.length() - i; j++)
+        for (int j = 0; j <= str.length() - i; j++)
         {
-            if (IsPalindrome(s.substr(j, i)))
+            if (is_palindrome(str.substr(j, i)))
             {
-                std::cout << s.substr(j, i) << std::endl;
+                std::cout << str.substr(j, i) << std::endl;
                 return 0;
             }
         }
     }
 
     return 0;
+}
+
+bool is_palindrome(std::string str)
+{
+    for (int i = 0; i < str.length() / 2; i++)
+    {
+        if (str[i] != str[str.length() - i - 1])
+        {
+            return false;
+        }
+    }
+
+    return true;
 }

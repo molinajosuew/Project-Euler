@@ -3,7 +3,7 @@
 
 namespace pe
 {
-    int* sieve(int n, int *s = 0)
+    int* sieve(int n, int& s)
     {
         bool *m = new bool[n + 1]();
 
@@ -24,16 +24,18 @@ namespace pe
                 m[j] = false;
             }
         }
+
+        s = 0;
         
         for (int i = 0; i < n + 1; i++)
         {
             if (m[i])
             {
-                (*s)++;
+                s++;
             }
         }
 
-        int *p = new int[*s], d = 0;
+        int *p = new int[s], d = 0;
 
         for (int i = 0; i < n + 1; i++)
         {

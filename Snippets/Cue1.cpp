@@ -1,16 +1,27 @@
+// The Cue Programming Challenge: 1
+// Josué Molina
+
 #include <iostream>
 
 bool is_palindrome(std::string);
 
 int main()
 {
-    std::string str = "FourscoreandsevenyearsagoourfaathersbroughtforthonthiscontainentanewnationconceivedinzLibertyanddedicatedtothepropositionthatallmenarecreatedequalNowweareengagedinagre" +
-                      "ahtcivilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldas" +
-                      "afinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratew" +
-                      "ecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesa" +
-                      "yherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobe" +
-                      "herededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyre" +
-                      "solvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth";
+    std::string str = std::string("Fourscoreandsevenyearsagoourfaathersbroughtforthonthiscontainentanewnationconceiv") +
+                                  "edinzLibertyanddedicatedtothepropositionthatallmenarecreatedequalNowweareengagedin" +
+                                  "agreahtcivilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlo" +
+                                  "ngendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthat" +
+                                  "fieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisa" +
+                                  "ltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotc" +
+                                  "onsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehavecons" +
+                                  "ecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrem" +
+                                  "emberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobede" +
+                                  "dicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedIti" +
+                                  "sratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonored" +
+                                  "deadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotio" +
+                                  "nthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGod" +
+                                  "shallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshal" +
+                                  "lnotperishfromtheearth";
 
     for (int i = str.length(); i >= 2; i--)
     {

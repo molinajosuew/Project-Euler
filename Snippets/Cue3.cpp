@@ -1,3 +1,6 @@
+// The Cue Programming Challenge: 3
+// Josué Molina
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

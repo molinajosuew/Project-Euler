@@ -2,43 +2,55 @@
 
 using namespace std;
 
-int binary_search(int arr[], int siz, int num)
+// This is my Binary Search function. It works on arrays of any type and allows
+// you to specify whether the array is sorted in ascending or descending order.
+
+template<typename T>
+int binary_search(T* array, int size, T value, bool (*compare)(T, T) = [](T a, T b) { return a < b; })
 {
-    int beg = 0, end = siz - 1, mid = (beg + end) / 2;
+    int start = 0, end = size - 1, middle = (start + end) / 2;
 
-    while (beg + 1 != end && beg != end)
+    while (start + 1 != end && start != end)
     {
-        if (arr[mid] == num)
-            return mid;
+        if (array[middle] == value)
+        {
+            return middle;
+        }
 
-        if (arr[mid] > num)
-            beg = mid;
+        if (compare(array[middle], value))
+        {
+            start = middle;
+        }
         else
-            end = mid;
+        {
+            end = middle;
+        }
 
-        mid = (beg + end) / 2;
+        middle = (start + end) / 2;
     }
 
-    return (arr[beg] == num) ? beg :
-           (arr[end] == num) ? end : -1;
+    return array[start] == value ? start : array[end] == value ? end : -1;
 }
 
-int linear_search(int arr[], int siz, int num)
+int linear_search(int array[], int size, int value)
 {
-    for (int i = 0; i < siz; i++)
-        if (arr[i] == num)
+    for (int i = 0; i < size; i++)
+    {
+        if (array[i] == value)
+        {
             return i;
+        }
+    }
 
     return -1;
 }
 
 int main()
 {
-    const int siz = 16;
-    int arr[siz] = { 34, 19, 19, 18, 17, 13, 12, 12, 12, 11, 9, 5, 3, 2, 2, 0 };
+    const int size = 16;
+    string array[size] = { "34", "19", "19", "18", "17", "13", "12", "12", "12", "11", "9", "5", "3", "2", "2", "0" };
 
-    cout << "Binary Search: " << binary_search(arr, siz, 0) << endl;
-    cout << "Linear Search: " << linear_search(arr, siz, 0);
+    cout << "Binary Search: " << binary_search<string>(array, size, "0");
 
     return 0;
 }

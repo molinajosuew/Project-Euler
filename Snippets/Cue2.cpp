@@ -1,3 +1,6 @@
+// The Cue Programming Challenge: 2
+// Josué Molina
+
 #include <iostream>
 
 bool is_prime(int);
@@ -62,6 +65,7 @@ int sum_of_prime_divisors(int num)
         if (is_prime(i) && num % i == 0)
         {
             sum += i;
+
             while (num % i == 0)
             {
                 num /= i;
